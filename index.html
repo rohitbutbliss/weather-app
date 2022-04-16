@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/e9a5a74c45.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <nav id="navbar">
+      <form>
+        <input type="text" placeholder="Search the city" />
+        <button onclick="searchCity(event)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <button onclick="currLocationData()"><i class="fa-solid fa-location-dot"></i></button>
+    </nav>
+    <div id="current-data">
+
+    </div>
+    <div id="forecast-data"></div>
+    <div class="mapouter" style="height: 100%;border-radius: 5px;">
+      <div class="gmap_canvas" style="height: 100%;">
+        <iframe
+        style="border-radius: 5px;"
+          width="100%"
+          height= "100%"
+          id="gmap_canvas"
+          src=""
+          frameborder="0"
+          scrolling="no"
+          marginheight="0"
+          marginwidth="0"
+        ></iframe
+        >
+        </style>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="./index.js"></script>
