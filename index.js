@@ -5,7 +5,7 @@ function searchCity(e) {
     opacityZero();
     let x = document.querySelector("#navbar > form > input").value.split(" ").join("+");
     if (x !== "") {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${x}&appid=e2a8b1a988b1d299deaf2163b348c86b&units=metric`).then(function (res) {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${x}&appid={api}&units=metric`).then(function (res) {
             map.src = null;
             return res.json();
 
@@ -15,7 +15,7 @@ function searchCity(e) {
             console.log(err);
         })
 
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${x}&appid=e2a8b1a988b1d299deaf2163b348c86b&units=metric`).then(function (res) {
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${x}&appid={api}&units=metric`).then(function (res) {
             return res.json();
         }).then(function (res) {
             pushDataInOther(res);
@@ -267,8 +267,8 @@ function putDataInCurrent(res) {
 }
 
 function getDataUsingLatAndLong(lat, long) {
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=e2a8b1a988b1d299deaf2163b348c86b&units=metric`;
-    let url2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=e2a8b1a988b1d299deaf2163b348c86b&units=metric`
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid={api}&units=metric`;
+    let url2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid={api}&units=metric`
     fetch(url2).then(function (res) {
         return res.json();
     }).then(function (res) {
